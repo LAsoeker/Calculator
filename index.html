@@ -5,10 +5,39 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="script.js" defer></script>
+  <script src="https://kit.fontawesome.com/420edeacaf.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
   <title>Calculator</title>
 </head>
 <body>
-  
+  <div class="origin">
+    <div class="calculator-base">
+      <div class="calculator-pane front">
+        <div id="output" class="calculator-display">
+          <div id="output-input"></div>
+          <div data-output-result id="output-result"></div>
+        </div>
+        <div class="calculator-keys">
+          <button id="key-7" data-value="7" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">7</div></div></button>
+          <button id="key-8" data-value="8" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">8</div></div></button>
+          <button id="key-9" data-value="9" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">9</div></div></button>
+          <button id="key-4" data-value="4" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">4</div></div></button>
+          <button id="key-5" data-value="5" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">5</div></div></button>
+          <button id="key-6" data-value="6" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">6</div></div></button>
+          <button id="key-1" data-value="1" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">1</div></div></button>
+          <button id="key-2" data-value="2" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">2</div></div></button>
+          <button id="key-3" data-value="3" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">3</div></div></button>
+          <button id="key-0" data-value="0" class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">0</div></div></button>
+          <button id="key-dot" data-value="." class="calculator-key number-key"><div class="calculator-key__content"><div class="calculator-key__text">.</div></div></button>
+          <button id="key-multiply" data-operation="*" class="calculator-key"><div class="calculator-key__content"><div class="calculator-key__text">x</div></div></button>
+          <button id="key-add" data-operation="+" class="calculator-key"><div class="calculator-key__content"><div class="calculator-key__text"><i class="fa-solid fa-plus"></i></div></div></button>
+          <button id="key-substract" data-operation="-" class="calculator-key"><div class="calculator-key__content"><div class="calculator-key__text"><i class="fa-solid fa-minus"></i></div></div></button>
+          <button id="key-divide" data-operation="/" class="calculator-key"><div class="calculator-key__content"><div class="calculator-key__text"><i class="fa-solid fa-divide"></i></div></div></button>
+          <button id="key-operate" data-operate class="calculator-key"><div class="calculator-key__content"><div class="calculator-key__text"><i class="fa-solid fa-equals"></i></div></div></button>
+          <button id="key-clear" data-clear class="calculator-key"><div class="calculator-key__content"><div class="calculator-key__text">C</div></div></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

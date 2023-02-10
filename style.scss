@@ -1,3 +1,157 @@
 @import 'variables';
 @import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  font-family:"Roboto", sans-serif;
+  overflow: hidden;
+  background-color: #f4f5f6;
+}
+
+.origin{
+  top: 50%;
+  left:50%;
+  position: relative;
+}
+
+.calculator-base{
+  box-shadow:  
+  -6px -20px 35px #ffffff,
+  -6px -10px 15px #ffffff, 
+  -20px 0px 30px #ffffff,
+  6px 20px 25px rgba(0,0,0,0.2),
+  2px 2px 3px 1px rgba(0,0,0,0.4);
+  margin: -0.5*$calculator-pane-height -0.5*$calculator-pane-width;
+  height: $calculator-pane-height; width: $calculator-pane-width;
+  @include border-radius(12px);
+}
+
+.calculator-pane{
+  padding: $calculator-pane-padding;
+  height: 103%; width: 100%;
+  transform: translateY(-3%);
+  border-radius: inherit;
+  box-shadow:inset 0px -8px 5px #dddddd, inset -5px -8px 5px 5px #dddddd;
+  background-color: $calculator-pane-color;
+  &.front{
+    @include flex-column;
+    justify-content: space-between;
+    gap:50px;
+  }
+
+  >.calculator-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: $display-height;
+    box-shadow: inset 2px 0 0 rgba(0,0,0,0.1),
+                0 -4px 0 rgba(0,0,0,0.1),
+                inset 0 3px 0 -2px rgba(0,0,0,0.2),
+                inset 0px -5px 10px rgba(0,0,0,0.1),
+                inset 0px -1px 5px rgba(0,0,0,0.2);
+    background-color: rgb(255, 255,255);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    text-align: end;
+    padding: 20px;
+    color: #888888;
+    @include border-radius(6px);
+    #output-input{
+      font-size: 18px;
+    }
+  }
+  .calculator-keys{
+    @include grid-1fr(4, 5, 5px);
+    height: $calculator-pane-height - $display-height;
+    .calculator-key{
+      font-family:"Roboto", sans-serif;
+      font-size: 34px;
+      width: 100%; height: 100%;
+      background: #fbfbfb;
+      border: 2px solid #888888;
+      transition: .13s ease-in-out;
+      cursor: pointer;
+      @include border-radius(6px);
+      box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+      &:active{
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        .calculator-key__content{
+          box-shadow:inset 0px -1px 0px #dddddd, 0px -1px 0px #fbfbfb;
+          .calculator-key__text{
+            transform: translate3d(0, -1px, 0);
+          }
+        }
+      }
+      &__content{
+        @include flex-center;
+        width: 100%; height: 100%;
+        border-radius: inherit;
+        transition: .13s ease-in-out;
+        box-shadow:inset 0px -4px 0px #dddddd, 0px -4px 0px #fbfbfb;
+      }
+      &__text{
+        text-align: center;
+        transform: translate3d(0, -4px, 0);
+        color: transparent;
+        background-color: #888888;
+        text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+        @include backgound-clip(text);
+        transition: .13s ease-in-out; 
+      }
+    }
+  }
+}
+
+#key-4{
+  grid-area: 2/1/3/2;
+}
+#key-5{
+  grid-area: 2/2/3/3;
+}
+#key-6{
+  grid-area: 2/3/3/4;
+}
+#key-1{
+  grid-area: 3/1/4/2;
+}
+#key-2{
+  grid-area: 3/2/4/3;
+}
+#key-3{
+  grid-area: 3/3/4/4;
+}
+#key-0{
+  
+  grid-area: 4/1/5/2;
+}
+#key-clear{
+  grid-area: 1/4/2/6;
+}
+#key-operate{
+  grid-area: 4/4/5/6;
+}
+#key-multiply{
+  grid-area: 3/4/4/5;
+}
+#key-divide{
+  grid-area: 3/5/4/6;
+}
+#key-add{
+  grid-area: 2/4/3/5;
+}
+#key-substract{
+  grid-area: 2/5/3/6;
+}
+#key-dot{
+  grid-area: 4/2/5/3;
+}
